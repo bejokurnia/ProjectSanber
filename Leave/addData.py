@@ -16,7 +16,7 @@ class AddJobTitles(unittest.TestCase):  # TEST SCENARIO
     def setUp(self): 
         self.browser = webdriver.Chrome(ChromeDriverManager().install())
         
-    def test_add_job_titles_admin(self): 
+    def test_add_leave_type_admin(self): 
         # steps
         browser = self.browser #buka web browser
         browser.get("https://opensource-demo.orangehrmlive.com/ ") # buka situs
@@ -28,26 +28,28 @@ class AddJobTitles(unittest.TestCase):  # TEST SCENARIO
         time.sleep(1)
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button").click() # klik tombol sign in
         time.sleep(1)
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a").click() # klik menu Admin
+
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[3]/a").click() # klik menu leave
         time.sleep(1)
 
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[2]/span").click() # klik menu dropdown Job
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[5]").click() # klik menu dropdown configure
         time.sleep(3)
 
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[2]/ul/li[1]/a").click() # klik Job Titles
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[5]/ul/li[2]/a").click() # klik Leave type
         time.sleep(1)
 
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/div[1]/div/button").click() # klik Add
         time.sleep(1)
 
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/input").send_keys(randomStr) # Isi Job Title
-        time.sleep(2)
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[2]/textarea").send_keys(randomStr) # Isi Job Description
-        time.sleep(2)
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[4]/div/div[2]/textarea").send_keys(randomStr) # Isi Note
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/input").send_keys(randomStr) # Isi Name
         time.sleep(2)
 
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[5]/button[2]").click() # klik Add
+        # browser.find_element(By.CSS_SELECTOR,"input[type='radio'][value='true']").click() # pilih Radiobutton
+        # time.sleep(2)
+        browser.find_element(By.CSS_SELECTOR,"#app > div.oxd-layout > div.oxd-layout-container > div.oxd-layout-context > div > div > form > div:nth-child(2) > div > div > div > div.--status-grouped-field > div:nth-child(1) > div:nth-child(2) > div > label").click() # pilih Radiobutton
+        time.sleep(2)
+
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]").click() # klik Save
         time.sleep(3)
 
         # validasi

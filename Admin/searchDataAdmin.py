@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-class TestSearchData(unittest.TestCase):  # TEST SCENARIO
+class TestSearchDataAdmin(unittest.TestCase):  # TEST SCENARIO
 
     def setUp(self): 
         self.browser = webdriver.Chrome(ChromeDriverManager().install())
@@ -42,7 +42,7 @@ class TestSearchData(unittest.TestCase):  # TEST SCENARIO
         time.sleep(1)
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input").send_keys("Admin") # isi by username
         time.sleep(1)
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik menu Admin
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik search
         time.sleep(1)
 
 
@@ -62,7 +62,7 @@ class TestSearchData(unittest.TestCase):  # TEST SCENARIO
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/input").send_keys("Paul Collings") # isi by employee name
         time.sleep(1)
         
-        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik menu Admin
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik search
         time.sleep(2)
 
     def tearDown(self): 
