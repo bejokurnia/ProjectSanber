@@ -9,10 +9,11 @@ class TestViewDashboard(unittest.TestCase):  # TEST SCENARIO
     def setUp(self): 
         self.browser = webdriver.Chrome(ChromeDriverManager().install())
         
-    def test_b_search_by_employee_name(self): 
+    def test_view_dashboard(self): 
         # steps
         browser = self.browser #buka web browser
         browser.get("https://opensource-demo.orangehrmlive.com/ ") # buka situs
+        browser.maximize_window()
         time.sleep(5)
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input").send_keys("Admin") # isi email
         time.sleep(1)
