@@ -30,6 +30,7 @@ class TestSearchData(unittest.TestCase):  # TEST SCENARIO
         # steps
         browser = self.browser #buka web browser
         browser.get("https://opensource-demo.orangehrmlive.com/ ") # buka situs
+        browser.maximize_window()
         time.sleep(5)
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input").send_keys("Admin") # isi email
         time.sleep(1)
