@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-class TestSearchData(unittest.TestCase):  # TEST SCENARIO
+class TestSearchDataPIM(unittest.TestCase):  # TEST SCENARIO
 
     def setUp(self): 
         self.browser = webdriver.Chrome(ChromeDriverManager().install())
