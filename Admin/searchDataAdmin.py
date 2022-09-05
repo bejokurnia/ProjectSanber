@@ -50,6 +50,7 @@ class TestSearchDataAdmin(unittest.TestCase):  # TEST SCENARIO
         # steps
         browser = self.browser #buka web browser
         browser.get("https://opensource-demo.orangehrmlive.com/ ") # buka situs
+        browser.maximize_window()
         time.sleep(5)
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input").send_keys("Admin") # isi email
         time.sleep(1)
@@ -60,6 +61,46 @@ class TestSearchDataAdmin(unittest.TestCase):  # TEST SCENARIO
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a").click() # klik menu Admin
         time.sleep(1)
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/input").send_keys("Paul Collings") # isi by employee name
+        time.sleep(1)
+        
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik search
+        time.sleep(2)
+
+    def test_a_search_by_unknown_username_admin(self): 
+        # steps
+        browser = self.browser #buka web browser
+        browser.get("https://opensource-demo.orangehrmlive.com/ ") # buka situs
+        browser.maximize_window()
+        time.sleep(5)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input").send_keys("Admin") # isi email
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input").send_keys("admin123") # isi password
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button").click() # klik tombol sign in
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a").click() # klik menu Admin
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input").send_keys("wakhid") # isi by username
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik search
+        time.sleep(1)
+
+
+    def test_b_search_by_unknown_employee_name(self): 
+        # steps
+        browser = self.browser #buka web browser
+        browser.get("https://opensource-demo.orangehrmlive.com/ ") # buka situs
+        browser.maximize_window()
+        time.sleep(5)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input").send_keys("Admin") # isi email
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input").send_keys("admin123") # isi password
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button").click() # klik tombol sign in
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a").click() # klik menu Admin
+        time.sleep(1)
+        browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div/input").send_keys("Wakhid Kurniawan") # isi by employee name
         time.sleep(1)
         
         browser.find_element(By.XPATH,"/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]").click() # klik search
